@@ -9,8 +9,8 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 8080
-      targetPort: 8090
+    - port: 80
+      targetPort: 9376
   selector:
     name: k8s-bg
     version: v1
