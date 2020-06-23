@@ -39,6 +39,3 @@ dcosDockerCredentialsPath: '',
 resourceGroupName: 'vm-rg', 
 secretName: '', sshCredentialsId: ''
 }
-
-
-
