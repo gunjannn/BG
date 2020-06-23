@@ -12,5 +12,5 @@ spec:
     - port: 8080
       targetPort: 8080
   selector:
-    name: springboot
+    name: k8s-bg
     version: v1
