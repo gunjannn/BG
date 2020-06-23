@@ -17,4 +17,4 @@ spec:
       - image: dockergunn/bg:v2
         ports:
         - name: k8s-bg
-          containerPort: 8050   
+          containerPort: 8080   
