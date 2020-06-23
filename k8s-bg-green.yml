@@ -5,16 +5,16 @@ metadata:
   labels:
     name: k8s-bg
 spec:
-  replicas: 5
+  replicas: 1
   template:
     metadata:
       name: k8s-bg
       labels:
         name: k8s-bg
-        version: v1
+        version: v2
     spec:
       containers:
-      - image: dockergunn/bg:v1
+      - image: dockergunn/bg:v2
         name: k8s-bg
         ports:
         - name: k8s-bg
