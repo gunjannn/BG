@@ -4,12 +4,12 @@ node{
         git url:  'https://github.com/gunjannn/BG.git',branch: 'master'
     }
     
-    //*/stage(" Maven Clean Package"){
+    /*stage(" Maven Clean Package"){
   //    def mavenHome = tool name: "localmaven", type: "maven"
   //    def mavenCMD = "${mavenHome}/bin/mvn"
       sh "mvn clean package"
       
-    } //*/
+    } */
     
     
     stage('Build Docker Image'){
