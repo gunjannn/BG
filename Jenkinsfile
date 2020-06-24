@@ -33,7 +33,7 @@ def aks = 'k8s-bg'
      stage("Deploy To AKS"){
 acsDeploy azureCredentialsId: 'k8s-bg', 
 configFilePaths: 'k8s-bg-blue.yml, k8s-bg-green.yml, k8s-bg-service.yml',
-containerRegistryCredentials: [[credentialsId: 'Dockergunn', url: 'https://hub.docker.com/repository/docker/dockergunn']], 
+containerRegistryCredentials: [[credentialsId: 'DOKCER_HUB_PASSWORD', url: 'https://hub.docker.com/repository/docker/dockergunn']], 
 containerService: 'k8s-bg | AKS', 
 dcosDockerCredentialsPath: '', 
 resourceGroupName: 'vm-rg', 
