@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
       - image: dockergunn/bg:v1
+        imagePullPolicy: Always
         name: k8s-bg
         ports:
         - name: k8s-bg
