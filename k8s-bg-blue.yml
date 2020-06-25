@@ -14,7 +14,7 @@ spec:
         version: blue
     spec:
       containers:
-      - image: dockergunn/bg:v1
+      - image: dockergunn/bg:v1.1
         name: k8s-bg
         ports:
         - name: k8s-bg
