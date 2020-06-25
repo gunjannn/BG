@@ -14,9 +14,9 @@ node{
     
     stage('Build Docker Image'){
         sh 'docker rmi dockergunn/bg:v1'
-        sh 'docker rmi  dockergunn/bg:v2'
+        /*sh 'docker rmi  dockergunn/bg:v2'*/
         sh 'docker build -t dockergunn/bg:v1 .'
-        sh 'docker build -t dockergunn/bg:v2 .'
+        /*sh 'docker build -t dockergunn/bg:v2 .'*/
         
     }
     
@@ -25,7 +25,7 @@ node{
           sh "docker login -u dockergunn -p ${DOKCER_HUB_PASSWORD}"
         }
         sh 'docker push dockergunn/bg:v1'
-        sh 'docker push dockergunn/bg:v2'
+        /*sh 'docker push dockergunn/bg:v2'*/
         
      }
      
@@ -34,7 +34,7 @@ def resourceGroup = 'vm-rg'
 def aks = 'k8s-bg'
      stage("Deploy To AKS"){
 acsDeploy azureCredentialsId: 'k8s-bg', 
-configFilePaths: 'k8s-bg-blue.yml, k8s-bg-green.yml, k8s-bg-service.yml',
+configFilePaths: 'k8s-bg-blue.yml, k8s-bg-service.yml',
 containerRegistryCredentials: [[credentialsId: 'dockergunn', url: 'https://hub.docker.com/repository/docker/dockergunn']], 
 containerService: 'k8s-bg | AKS', 
 dcosDockerCredentialsPath: '', 
