@@ -11,10 +11,10 @@ spec:
       name: k8s-bg
       labels:
         name: k8s-bg
-        version: v2
+        version: green
     spec:
       containers:
-      - image: dockergunn/bg:v2
+      - image: dockergunn/bg:v2.1
         name: k8s-bg
         ports:
         - name: k8s-bg
