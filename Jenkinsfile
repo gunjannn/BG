@@ -1,7 +1,7 @@
 node{
      
     stage('SCM Checkout'){
-        git url:  'https://github.com/gunjannn/BG.git',branch: 'master'
+        git url:  'https://github.com/gunjannn/BG.git',branch: 'v1'
     }
     
     /*stage(" Maven Clean Package"){
@@ -16,6 +16,7 @@ node{
         sh 'docker rmi dockergunn/bg:v1'
         sh 'docker rmi  dockergunn/bg:v2'
         sh 'docker build -t dockergunn/bg:v1 .'
+        sh 'docker build -t dockergunn/bg:v2 .'
         
     }
     
@@ -24,6 +25,7 @@ node{
           sh "docker login -u dockergunn -p ${DOKCER_HUB_PASSWORD}"
         }
         sh 'docker push dockergunn/bg:v1'
+        sh 'docker push dockergunn/bg:v2'
         
      }
      
