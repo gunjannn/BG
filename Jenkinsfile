@@ -13,9 +13,8 @@ node{
     
     
     stage('Build Docker Image'){
-        sh 'docker rmi nginx:alpine'
         /*sh 'docker rmi dockergunn/bg:v1'*/
-        sh 'docker rmi  dockergunn/bg:v2'
+        /*sh 'docker rmi  dockergunn/bg:v2'*/
         /*sh 'docker build -t dockergunn/bg:v1 .'*/
         sh 'docker build -t dockergunn/bg:v2 .'
     }
@@ -24,8 +23,8 @@ node{
         withCredentials([string(credentialsId: 'DOKCER_HUB_PASSWORD', variable: 'DOKCER_HUB_PASSWORD')]) {
           sh "docker login -u dockergunn -p ${DOKCER_HUB_PASSWORD}"
         }
-        sh 'docker push dockergunn/bg:v1'
-        /*sh 'docker push dockergunn/bg:v2'*/
+        /*sh 'docker push dockergunn/bg:v1'*/
+        sh 'docker push dockergunn/bg:v2'
      }
      
 def servicePrincipalId = '3461446c-1154-4720-95f3-6c1309af3507'
