@@ -14,10 +14,10 @@ node{
     
     stage('Build Docker Image'){
         sh 'docker rmi nginx:alpine'
-        sh 'docker rmi dockergunn/bg:v1'
-        /*sh 'docker rmi  dockergunn/bg:v2'*/
-        sh 'docker build -t dockergunn/bg:v1 .'
-        /*sh 'docker build -t dockergunn/bg:v2 .'*/
+        /*sh 'docker rmi dockergunn/bg:v1'*/
+        sh 'docker rmi  dockergunn/bg:v2'
+        /*sh 'docker build -t dockergunn/bg:v1 .'*/
+        sh 'docker build -t dockergunn/bg:v2 .'
     }
     
     stage('Push Docker Image'){
