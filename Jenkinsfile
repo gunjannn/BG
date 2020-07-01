@@ -27,7 +27,7 @@ node{
         
      }
      
-def servicePrincipalId = '3461446c-1154-4720-95f3-6c1309af3507'
+def servicePrincipalId = '0e7f456e-4541-4b36-8691-0eb65c8b697f'
 def resourceGroup = 'vm-rg'
 def aks = 'k8s-bg'
      stage("Deploy To AKS"){
