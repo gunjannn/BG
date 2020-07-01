@@ -23,7 +23,7 @@ node{
         withCredentials([string(credentialsId: 'DOKCER_HUB_PASSWORD', variable: 'DOKCER_HUB_PASSWORD')]) {
           sh "docker login -u dockergunn -p ${DOKCER_HUB_PASSWORD}"
         }
-        sh 'docker push dockergunn/bg:v2.1'
+        sh 'docker push dockergunn/bg:v2.2'
         
      }
      
