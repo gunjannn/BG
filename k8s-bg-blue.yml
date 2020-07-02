@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: k8s-bg
@@ -6,12 +6,16 @@ metadata:
     name: k8s-bg
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      name: k8s-bg
+      version: blue
   template:
     metadata:
       name: k8s-bg
       labels:
         name: k8s-bg
-        version: gun
+        version: blue
     spec:
       containers:
       - image: dockergunn/bg:v1.2
