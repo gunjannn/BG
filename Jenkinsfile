@@ -13,9 +13,9 @@ node{
     
     
     stage('Build Docker Image'){
-        sh 'docker rmi -f dockergunn/bg:v1'
+        sh 'docker rmi -f dockergunn/bg:v1.1'
         /*sh 'docker rmi  dockergunn/bg:v2'*/
-        sh 'docker build -t dockergunn/bg:v1.1 .'
+        sh 'docker build -t dockergunn/bg:v1.2 .'
         /*sh 'docker build -t dockergunn/bg:v2 .'*/
         
     }
@@ -24,7 +24,7 @@ node{
         withCredentials([string(credentialsId: 'DOKCER_HUB_PASSWORD', variable: 'DOKCER_HUB_PASSWORD')]) {
           sh "docker login -u dockergunn -p ${DOKCER_HUB_PASSWORD}"
         }
-        sh 'docker push dockergunn/bg:v1.1'
+        sh 'docker push dockergunn/bg:v1.2'
         /*sh 'docker push dockergunn/bg:v2'*/
         
      }
